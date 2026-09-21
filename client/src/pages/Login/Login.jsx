@@ -10,9 +10,13 @@ const Login = () => {
   const [userName,setUserName] = useState("");
   const [email,setEmail] = useState("");
   const[password,setPassword] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
     try {
       if (currState === "Sign Up") {
         await signup(userName, email, password);
@@ -22,6 +26,8 @@ const Login = () => {
       }
     } catch (error) {
     toast.error(error.message || "Login failed!");
+    } finally {
+      setIsSubmitting(false);
     }
   };
   return (
@@ -52,9 +58,9 @@ const Login = () => {
           required
         />
         {currState == "Login" ? (
-          <button type="submit">Login</button>
+          <button type="submit" disabled={isSubmitting}>Login</button>
         ) : (
-          <button type="submit">Sign Up</button>
+          <button type="submit" disabled={isSubmitting}>Sign Up</button>
         )}
       
 

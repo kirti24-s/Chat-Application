@@ -49,7 +49,6 @@ const signup = async (username, email, password) => {
     return user;
   } catch (error) {
     console.error("Signup failed:", error);
-    toast.error(error.message || "SignUp failed");
     throw error;
   }
 };

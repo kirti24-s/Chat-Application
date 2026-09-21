@@ -431,7 +431,11 @@ const LeftSidebar = ({ setShowLeftSidebar }) => {
 
         {!showSearch &&
           users
-            .filter((userData) => auth.currentUser?.uid !== userData.id)
+            .filter(
+              (userData) =>
+                auth.currentUser?.uid !== userData.id &&
+                chatData?.some((chat) => chat.rId === userData.id),
+            )
             .map((user) => {
               const chat = chatData?.find((item) => item.rId === user.id);
 
