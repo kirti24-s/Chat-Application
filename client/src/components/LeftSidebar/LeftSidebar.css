@@ -1,247 +1,452 @@
+/* =====================================================
+   LEFT SIDEBAR
+   ===================================================== */
+
 .ls {
     background: #001030;
     color: white;
+
     height: 78vh;
     width: 100%;
+
     box-sizing: border-box;
+
     overflow: hidden;
+
+    position: relative;
+
+    z-index: 5000;
 }
+
+
+/* =====================================================
+   TOP SECTION
+   ===================================================== */
 
 .ls-top {
     padding: 20px;
+    box-sizing: border-box;
 }
 
-.ls .ls-nav {
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+
+.ls-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
 
-.ls .ls-nav .logo {
-    max-width: 140px;
     width: 100%;
-    height: auto;
 }
 
-.ls .ls-nav .menu img {
-    max-height: 20px;
-    width: auto;
+
+/* LOGO */
+
+.sidebar-logo {
+    margin: 0;
+
+    font-size: 24px;
+    font-weight: 600;
+
+    color: white;
 }
 
-.ls .ls-search {
+
+/* =====================================================
+   SEARCH
+   ===================================================== */
+
+.ls-search {
     padding: 10px 11px;
+
     margin-top: 20px;
+
     background-color: #002670;
+
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 5px;
+
+    gap: 7px;
+
     box-sizing: border-box;
+
     width: 100%;
+
+    border-radius: 5px;
 }
 
-.ls .ls-search img {
-    width: 16px;
+
+.search-icon {
+    font-size: 14px;
+
     flex-shrink: 0;
 }
 
-.ls .ls-search input {
+
+.ls-search input {
     background: transparent;
-    border-radius: 30px;
+
     border: none;
     outline: none;
+
     font-size: 11px;
+
     color: white;
+
     width: 100%;
+
     min-width: 0;
 }
 
-.ls .ls-search input::placeholder {
+
+.ls-search input::placeholder {
     color: #c8c8c8;
 }
 
-.ls .ls-list {
+
+/* =====================================================
+   FRIEND LIST
+   ===================================================== */
+
+.ls-list {
     display: flex;
+
     flex-direction: column;
+
     height: 70%;
+
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-.friends img {
-    width: 35px;
-    min-width: 35px;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    object-fit: cover;
-}
+
+/* =====================================================
+   FRIEND
+   ===================================================== */
 
 .friends {
     display: flex;
+
     align-items: center;
+
     gap: 10px;
+
     padding: 10px 20px;
+
     cursor: pointer;
+
     font-size: 13px;
+
     box-sizing: border-box;
+
     width: 100%;
 }
 
-.friends div {
+
+/* FRIEND AVATAR */
+
+.friend-avatar {
+    width: 35px;
+    min-width: 35px;
+
+    height: 35px;
+
+    border-radius: 50%;
+
     display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #077eff;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+/* FRIEND TEXT */
+
+.friends div:last-child {
+    display: flex;
+
     flex-direction: column;
+
     min-width: 0;
 }
 
+
 .friends p {
     margin: 0;
+
     overflow: hidden;
+
     text-overflow: ellipsis;
+
     white-space: nowrap;
 }
 
+
 .friends span {
     color: #9f9f9f;
+
     font-size: 11px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
 }
 
+
+/* HOVER */
+
 .friends:hover {
-    background-color: #077EFF;
+    background-color: #077eff;
 }
+
 
 .friends:hover span {
     color: white;
 }
 
-.ls-nav .menu {
-    position: relative;
-    padding: 10px 0px;
-    cursor: pointer;
-}
 
-.menu .sub-menu {
-    z-index: 100;
-    width: 130px;
-    padding: 20px;
-    background-color: white;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    border-radius: 5px;
-    color: black;
-    display: none;
-    box-sizing: border-box;
-}
-
-.sub-menu hr {
-    border: none;
-    height: 1px;
-    background: #a4a4a4;
-    margin: 8px 0px;
-}
-
-.sub-menu p,
-.sub-menu button {
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.sub-menu button {
-    padding: 0;
-    border: none;
-    background: transparent;
-    color: inherit;
-    text-align: left;
-}
-
-.ls-nav .menu:hover .sub-menu {
-    display: block;
-}
-
-.ls-list .friends.border span {
-    color: #07fff3;
-}
+/* =====================================================
+   OPEN SIDEBAR BUTTON
+   ===================================================== */
 
 .open-sidebar {
-  display: none;
+    display: none;
 }
-/* =========================
+
+
+/* =====================================================
+   CLOSE SIDEBAR BUTTON
+   ===================================================== */
+
+.close-sidebar {
+    display: none;
+}
+
+
+/* =====================================================
    TABLET
-   ========================= */
+   ===================================================== */
 
 @media (max-width: 900px) {
+
     .ls {
         height: 85vh;
     }
+
 
     .ls-top {
         padding: 15px;
     }
 
-    .ls .ls-nav .logo {
-        max-width: 120px;
+
+    .sidebar-logo {
+        font-size: 22px;
     }
 
-    .ls .ls-search {
+
+    .ls-search {
         margin-top: 15px;
     }
 
+
     .friends {
         padding: 9px 15px;
+
         font-size: 12px;
     }
 
-    .friends img {
+
+    .friend-avatar {
         width: 32px;
         min-width: 32px;
+
+        height: 32px;
+
+        font-size: 13px;
     }
+
 
     .friends span {
         font-size: 10px;
     }
+
+
+    /* =========================
+       OPEN BUTTON
+       ========================= */
+
+    .open-sidebar {
+        display: flex;
+
+        position: fixed;
+
+        top: 15px;
+        left: 15px;
+
+        width: 40px;
+        height: 40px;
+
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+
+        border-radius: 8px;
+
+        background: white;
+
+        color: #001030;
+
+        font-size: 20px;
+
+        cursor: pointer;
+
+        z-index: 10000;
+
+        box-shadow:
+            0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+
+    /* =========================
+       CLOSE BUTTON
+       ========================= */
+
+    .close-sidebar {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 35px;
+        height: 35px;
+
+        margin-left: auto;
+
+        padding: 0;
+
+        border: none;
+
+        background: transparent;
+
+        color: white;
+
+        font-size: 20px;
+
+        cursor: pointer;
+
+        z-index: 10001;
+    }
+
+
+    /* =========================
+       MOBILE/TABLET SIDEBAR
+       ========================= */
+
+    .ls {
+
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 80%;
+
+        max-width: 350px;
+
+        height: 100vh;
+
+        background: #001030;
+
+        z-index: 5000;
+
+        transform: translateX(-100%);
+
+        transition:
+            transform 0.3s ease;
+
+        overflow-y: auto;
+    }
+
+
+    /* SIDEBAR OPEN */
+
+    .ls.open {
+        transform: translateX(0);
+    }
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE
-   ========================= */
+   ===================================================== */
 
 @media (max-width: 650px) {
+
     .ls {
+        width: 82%;
+
+        max-width: 330px;
+
         height: 100vh;
-        width: 100%;
     }
+
 
     .ls-top {
         padding: 20px;
     }
 
-    .ls .ls-nav .logo {
-        max-width: 140px;
+
+    .sidebar-logo {
+        font-size: 22px;
     }
 
-    .ls .ls-search {
+
+    .ls-search {
         margin-top: 20px;
+
         padding: 11px;
     }
 
-    .ls .ls-search input {
+
+    .ls-search input {
         font-size: 12px;
     }
+
 
     .ls-list {
         height: calc(100% - 130px) !important;
     }
 
+
     .friends {
         padding: 11px 20px;
+
         font-size: 13px;
     }
 
-    .friends img {
+
+    .friend-avatar {
         width: 38px;
         min-width: 38px;
+
+        height: 38px;
+
+        font-size: 15px;
     }
+
 
     .friends span {
         font-size: 11px;
@@ -249,139 +454,87 @@
 }
 
 
-/* =========================
+/* =====================================================
    SMALL MOBILE
-   ========================= */
+   ===================================================== */
 
 @media (max-width: 400px) {
+
+    .ls {
+        width: 85%;
+
+        max-width: 300px;
+    }
+
+
     .ls-top {
         padding: 15px;
     }
 
-    .ls .ls-nav .logo {
-        max-width: 120px;
+
+    .sidebar-logo {
+        font-size: 20px;
     }
+
 
     .friends {
         padding: 10px 15px;
+
         gap: 8px;
     }
 
-    .friends img {
+
+    .friend-avatar {
         width: 35px;
         min-width: 35px;
+
+        height: 35px;
+
+        font-size: 14px;
     }
+
 
     .friends p {
         font-size: 12px;
     }
 
+
     .friends span {
         font-size: 10px;
-    }
-
-    .menu .sub-menu {
-        width: 125px;
-        padding: 15px;
     }
 }
 
 
-/* =========================
+/* =====================================================
    VERY SMALL MOBILE
-   ========================= */
+   ===================================================== */
 
 @media (max-width: 320px) {
+
+    .ls {
+        width: 90%;
+    }
+
+
     .ls-top {
         padding: 12px;
     }
 
-    .ls .ls-nav .logo {
-        max-width: 105px;
-    }
 
-    .ls .ls-search {
+    .ls-search {
         margin-top: 12px;
     }
+
 
     .friends {
         padding: 9px 12px;
     }
 
-    .friends img {
+
+    .friend-avatar {
         width: 32px;
         min-width: 32px;
+
+        height: 32px;
     }
-}
-.close-sidebar {
-    display: none;
-}
-
-@media (max-width: 650px) {
-
-    .close-sidebar {
-        display: block;
-
-        background: transparent;
-        border: none;
-
-        color: white;
-
-        font-size: 24px;
-
-        cursor: pointer;
-
-        padding: 5px 10px;
-
-        margin-left: auto;
-
-        z-index: 10000;
-    }
-}
-
-
-@media (max-width: 900px) {
-  .open-sidebar {
-    display: flex;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1000;
-
-    width: 40px;
-    height: 40px;
-
-    align-items: center;
-    justify-content: center;
-
-    border: none;
-    border-radius: 8px;
-    background: white;
-
-    font-size: 20px;
-    cursor: pointer;
-
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  }
-}
-
-.close-sidebar {
-  display: none;
-}
-
-@media (max-width: 900px) {
-  .close-sidebar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 35px;
-    height: 35px;
-
-    border: none;
-    background: transparent;
-
-    font-size: 20px;
-    cursor: pointer;
-  }
 }
