@@ -8,7 +8,6 @@ import { AppContext } from "../../context/AppContextValue";
 const Chat = () => {
   const { userData } = useContext(AppContext);
 
-  // Left sidebar is visible when mobile chat opens
   const [showLeftSidebar, setShowLeftSidebar] = useState(true);
 
   return (
