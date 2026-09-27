@@ -1,0 +1,195 @@
+.login {
+  min-height: 100vh;
+  background: #111b35 url(/background.png) center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.logo {
+  width: min(20vw, 200px);
+  height: auto;
+}
+
+.login-form {
+  min-height: 30px;
+  min-width: 280px;
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+  background: white;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 10px;
+}
+
+.login-form .login-term {
+  display: flex;
+  gap: 10px;
+}
+
+.login-form h2 {
+  font-weight: 500;
+  margin: 0;
+}
+
+.login-form .form-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  border: 1px solid #c9c9c9;
+  border-radius: 4px;
+  outline-color: #077eff;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #077eff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-form .login-term {
+  display: flex;
+  gap: 5px;
+  font-size: 12px;
+  color: #808080;
+}
+
+.login-form .login-forgot {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.login-form .login-toggle {
+  font-size: 13px;
+  color: #5c5c5c;
+}
+
+.login-form .login-toggle span {
+  font-weight: 500;
+  color: #077eff;
+  cursor: pointer;
+}
+
+.login-form .login-error {
+  margin: 0;
+  color: #d32f2f;
+  font-size: 13px;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 900px) {
+  .login {
+    justify-content: center;
+    gap: 60px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .login-form {
+    max-width: 360px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 650px) {
+  .login {
+    min-height: 100vh;
+    padding: 30px 20px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .logo {
+    width: 140px;
+  }
+
+  .login-form {
+    width: 100%;
+    max-width: 380px;
+    min-width: 0;
+    padding: 20px;
+    gap: 18px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+   ========================= */
+
+@media (max-width: 400px) {
+  .login {
+    padding: 20px 15px;
+    gap: 25px;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .login-form {
+    max-width: 100%;
+    padding: 18px 15px;
+    gap: 16px;
+  }
+
+  .login-form h2 {
+    font-size: 22px;
+  }
+
+  .login-form .form-input {
+    padding: 9px 10px;
+  }
+
+  .login-form button {
+    padding: 9px;
+    font-size: 15px;
+  }
+
+  .login-form .login-toggle {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================
+   VERY SMALL SCREENS
+   ========================= */
+
+@media (max-width: 320px) {
+  .login {
+    padding: 15px 10px;
+    gap: 20px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .login-form {
+    padding: 15px 12px;
+    gap: 14px;
+  }
+}
