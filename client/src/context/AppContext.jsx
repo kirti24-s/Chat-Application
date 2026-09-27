@@ -17,20 +17,12 @@ const AppContextProvider = (props) => {
   const loadUserData = useCallback(
     async (uid) => {
       try {
-<<<<<<< HEAD
         // console.log("Trying to load UID:", uid);
-=======
-        console.log("Trying to load UID:", uid);
->>>>>>> c5c588d1de05563f11201b773241d33db56ad39f
 
         const userRef = doc(db, "users", uid);
         const userSnap = await getDoc(userRef);
 
-<<<<<<< HEAD
         // console.log("userSnap:", userSnap);
-=======
-        console.log("userSnap:", userSnap);
->>>>>>> c5c588d1de05563f11201b773241d33db56ad39f
 
         if (!userSnap.exists()) {
           console.log("No user document found for UID:", uid);
@@ -47,29 +39,17 @@ const AppContextProvider = (props) => {
 
         const chatRef = doc(db, "chatData", uid);
 
-<<<<<<< HEAD
         // console.log("Authenticated UID:", auth.currentUser?.uid);
         // console.log("Chat document path:", chatRef.path);
-=======
-        console.log("Authenticated UID:", auth.currentUser?.uid);
-        console.log("Chat document path:", chatRef.path);
->>>>>>> c5c588d1de05563f11201b773241d33db56ad39f
 
         const chatSnap = await getDoc(chatRef);
 
         if (!chatSnap.exists()) {
           await setDoc(chatRef, { chatData: [] });
-<<<<<<< HEAD
           // console.log("Created chat document:", chatRef.path);
         }
 
         // console.log("userData:", data);
-=======
-          console.log("Created chat document:", chatRef.path);
-        }
-
-        console.log("userData:", data);
->>>>>>> c5c588d1de05563f11201b773241d33db56ad39f
 
         if (location.pathname === "/") {
           navigate(
@@ -77,11 +57,7 @@ const AppContextProvider = (props) => {
           );
         }
       } catch (error) {
-<<<<<<< HEAD
         // console.error("User data or chat setup failed:", error);
-=======
-        console.error("User data or chat setup failed:", error);
->>>>>>> c5c588d1de05563f11201b773241d33db56ad39f
       }
     },
     [location.pathname, navigate]
@@ -97,21 +73,12 @@ const AppContextProvider = (props) => {
 
     const chatRef = doc(db, "chatData", uid);
 
-<<<<<<< HEAD
     // console.log("Starting chat listener:", {
     //   uid,
     //   path: chatRef.path,
     // });
 
     // console.log("Listening to chat document:", chatRef.path);
-=======
-    console.log("Starting chat listener:", {
-      uid,
-      path: chatRef.path,
-    });
-
-    console.log("Listening to chat document:", chatRef.path);
->>>>>>> c5c588d1de05563f11201b773241d33db56ad39f
 
     const unsubscribe = onSnapshot(
       chatRef,
@@ -120,13 +87,8 @@ const AppContextProvider = (props) => {
           ? snapshot.data().chatData || []
           : [];
 
-<<<<<<< HEAD
         // console.log("Chat document snapshot:", snapshot.data());
         // console.log("Chat items:", chatItems);
-=======
-        console.log("Chat document snapshot:", snapshot.data());
-        console.log("Chat items:", chatItems);
->>>>>>> c5c588d1de05563f11201b773241d33db56ad39f
 
         const enrichedChatData = [];
 
@@ -148,17 +110,10 @@ const AppContextProvider = (props) => {
 
         setChatData(enrichedChatData);
 
-<<<<<<< HEAD
         // console.log(
         //   "Loaded chat data:",
         //   enrichedChatData
         // );
-=======
-        console.log(
-          "Loaded chat data:",
-          enrichedChatData
-        );
->>>>>>> c5c588d1de05563f11201b773241d33db56ad39f
       },
       (error) => {
         console.error("Chat listener failed:", {
@@ -171,11 +126,7 @@ const AppContextProvider = (props) => {
     );
 
     return () => {
-<<<<<<< HEAD
       // console.log("Stopping chat listener:", chatRef.path);
-=======
-      console.log("Stopping chat listener:", chatRef.path);
->>>>>>> c5c588d1de05563f11201b773241d33db56ad39f
       unsubscribe();
     };
   }, [userData]);
