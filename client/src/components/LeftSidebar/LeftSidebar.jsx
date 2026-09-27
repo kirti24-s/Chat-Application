@@ -16,7 +16,11 @@ import { AppContext } from "../../context/AppContextValue";
 
 const getCurrentTime = () => Date.now();
 
+<<<<<<< HEAD
 const LeftSidebar = ({ setShowLeftSidebar, ShowLeftSidebar }) => {
+=======
+const LeftSidebar = ({ setShowLeftSidebar }) => {
+>>>>>>> c5c588d1de05563f11201b773241d33db56ad39f
   const navigate = useNavigate();
 
   const { chatData, setChatUser, setMessagesId } = useContext(AppContext);
@@ -288,8 +292,13 @@ const LeftSidebar = ({ setShowLeftSidebar, ShowLeftSidebar }) => {
   };
 
   const setChat = async (user) => {
+<<<<<<< HEAD
     // console.log("Clicked user:", user);
     // console.log("Current chatData:", chatData);
+=======
+    console.log("Clicked user:", user);
+    console.log("Current chatData:", chatData);
+>>>>>>> c5c588d1de05563f11201b773241d33db56ad39f
 
     const currentUser = auth.currentUser;
     const currentChatData = chatData || [];
@@ -297,7 +306,11 @@ const LeftSidebar = ({ setShowLeftSidebar, ShowLeftSidebar }) => {
     const existingChat = currentChatData.find((item) => item.rId === user.id);
 
     if (existingChat) {
+<<<<<<< HEAD
       // console.log("Existing chat:", existingChat);
+=======
+      console.log("Existing chat:", existingChat);
+>>>>>>> c5c588d1de05563f11201b773241d33db56ad39f
 
       if (existingChat.messageSeen === false) {
         const currentChatRef = doc(db, "chatData", currentUser.uid);
@@ -359,10 +372,20 @@ const LeftSidebar = ({ setShowLeftSidebar, ShowLeftSidebar }) => {
         <div className="ls-nav">
           <img src={assets.logo} alt="" className="logo" />
 
+<<<<<<< HEAD
           <button
             type="button"
             className="close-sidebar"
             onClick={() => setShowLeftSidebar(false)}
+=======
+          {/* MOBILE CLOSE BUTTON */}
+          <button
+            type="button"
+            className="close-sidebar"
+            onClick={() => {
+              setShowLeftSidebar(false);
+            }}
+>>>>>>> c5c588d1de05563f11201b773241d33db56ad39f
           >
             ✕
           </button>
