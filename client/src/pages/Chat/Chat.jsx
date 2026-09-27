@@ -15,7 +15,7 @@ const Chat = () => {
     <div className="chat">
       <div className="chat-container">
 
-        {/* LEFT SIDEBAR */}
+      
         <div
           className={
             showLeftSidebar
